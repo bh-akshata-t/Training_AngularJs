@@ -1,0 +1,28 @@
+<div class="content">
+    <!-- {{contact}} -->
+    <form name="contactForm" ng-submit="sendMessage()" novalidate>
+        <input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true"/>
+        <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+            <small style="color: red; display: block; text-align: center;">Enter a Valid Name</small>
+            <!-- $pristine - {{contactForm.name.$pristine}},
+            $dirty - {{contactForm.name.$dirty}},
+            $untouched - {{contactForm.name.$untouched}},
+            $touched - {{contactForm.name.$touched}},
+            $invalid - {{contactForm.name.$invalid}},
+            $valid- {{contactForm.name.$valid}}, -->
+        </div>
+        <div ng-show="contactForm.email.$touched && contactForm.email.$invalid">
+            <small style="color: red; display: block; text-align: center;">Enter a Valid email</small>
+        </div>
+        <input type="email" placeholder="Email" name="email"ng-model="contact.email" ng-required="true"/>
+        <textarea placeholder="Your Message" ng-model="contact.message" name="message" ng-required="true"></textarea>
+        <input type="submit" value="Send" ng-disabled="contactForm.$invalid" />
+    </form>
+</div>
+<!--Form Classess:: 
+1) ng-pristine:when input/form not used,property:$pristine
+2) ng-dirty: when input /form has been used,property:$dirty
+3) ng-untouched: when input has not been touched,property:$untouched
+4) ng-touched: when input has been touched,property:$touched
+5) ng-valid: when a form field is valid,property:$valid
+6) ng-invalid: when a form field is not valid,property:$invalid-->

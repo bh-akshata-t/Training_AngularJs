@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAngularApp">
+  <head>
+    <title>Learning Angular JS!!!!</title>
+    <link href="content/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app\app.js"></script>
+  </head>
+  <body>
+    <ng-include src="'header.html'"></ng-include> <!--ng-include can bring in html from another file and then can dump it into current viewwe can define ng-include by different method too::<header> ng-include="'header.html'></header>"-->
+    <div class="content">
+    <div ng-controller="AppController">
+        <button ng-click="order='name'">Order By Name</button>  <!--ng-click directive allows us to respond to click events from the user on elements-->
+        <button ng-click="order='sirname'">Order By Sirname</button> 
+        <input type="text" ng-model="search" placeholder="Search for a inten"/>
+        <ul>                                                                     <!--ng-hide:: It will hide if anything in that conditio is true-->
+             <li ng-repeat="intern in interns | orderBy: order | filter: search" ng-show="intern.available"> <!--ng-show:: if we have to show the output on specific condition then we can use this ng-show.it will show the output if the condition is true,,for eg if we have to show only available: true interns-->
+                <img ng-src="{{intern.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px;"
+                     ng-show="intern.thumb"/>  <!--ng-src:: wait until angular inject the property dynamically(replace with the string)-->
+                <h3>{{intern.name}} - {{intern.sirname}}</h3>                                              
+                <div class="remove" ng-click="removeIntern(intern)">X</div>
+                <span class="belt" ng-style="{'background-color': intern.belt}">{{intern.belt}} belt</span>                                                          
+            </li>
+          </ul>
+          <form ng-submit="addIntern()">
+            <input type="text" placeholder="name" ng-model="newintern.name"/> <!--when we give the data from form then we need tyo store that in a variable,we can remember it by that bg model directive,there we can declare the object or variable and store the data into it-->
+            <input type="text" placeholder="sirname" ng-model="newintern.sirname"/>
+            <input type="text" placeholder="belt" ng-model="newintern.belt"/>
+            <input type="submit" value="Add a new Intern" />
+          </form>                        
+    </div>  
+  </div>
+  </body>
+</html>

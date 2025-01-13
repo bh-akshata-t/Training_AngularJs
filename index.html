@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAngularApp">
+  <head>
+    <title>Learning Angular JS!!!!</title>
+    <link href="content/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app/app.js"></script>
+  </head>
+  <body ng-init="interns=['Akshata','prerna','vaidehi','asmita']">  <!--ng-init willinitiate the data,,to initiate the array write ng-init="numbers=[1,2,3,4]",,For colour::ng-init="color='red'--> 
+    <input type="text" ng-model="favmeal" placeholder="enter your fav meal" />   <!--2 way daya binding -->
+    <p class="{{color}}">Angular practice</p>
+    <!-- <p>{{5*5}}</p>   Expresssionss -->
+    <!-- <p>{{numbers[0]+numbers[3]}}</p> -->
+    <!-- <ul>
+      <li ng-repeat="intern in interns">{{intern}}</li>
+    </ul> -->
+    <!-- <akshata></akshata>  can create custom directives like akshata which will have some functionality -->
+  </body>
+</html>

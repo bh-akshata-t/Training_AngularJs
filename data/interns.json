@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Akshata",
+        "sirname": "Thorkar",
+        "available": true,
+        "belt": "green",
+        "thumb": "content/img/akshata.jpg"
+    },
+    {
+        "name": "Vaidehi",
+        "sirname": "Hiwarkar",
+        "available": true,
+        "belt": "purple"
+    },
+    {
+        "name": "prerna",
+        "sirname": "chavan",
+        "available": true,
+        "belt": "blue",
+        "thumb": "content/img/prerna.png"
+    },
+    {
+        "name": "asmita",
+        "sirname": "dhumal",
+        "available": false,
+        "belt": "pink"
+    }
+]

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAngularApp">
+  <head>
+    <title>Learning Angular JS!!!!</title>
+    <link href="content/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app/app.js"></script>
+  </head>
+  <body>   <!--filters change the displayof how we output the data to user that could be the order of data or we could prefix the data-->
+    <div class="content">
+    <div ng-controller="AppController">
+        <input type="text" ng-model="search" placeholder="Search for a inten"/>
+        <ul>
+             <li ng-repeat="intern in interns | orderBy: '-name' | filter: search"> 
+                {{intern.name}} - {{intern.sirname}}                                                        
+            </li>   <!--orderBy will give the names alphabetically -->
+          </ul>                         
+    </div>  
+  </div>
+  </body>
+</html>
